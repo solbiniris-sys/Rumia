@@ -1,0 +1,88 @@
+/* 루미아 — 호그와트 서재풍. 촛불 호박 · 말차 회갈색(케야티) · 분홍(모르포) · 양피지 */
+:root{--bg:#15110f;--sf:#221a17;--tx:#f2e9d8;--mu:#a89a84;--k:#a8ab8a;--m:#f2a0c0;--lil:#d4af6a;--edge:#4a3a30;--paper:#efe3c8;--ink:#2b2118}
+*{box-sizing:border-box}[hidden]{display:none!important}
+html,body{margin:0;min-height:100%}
+body{background:radial-gradient(ellipse at 50% -10%,#3a2a1c 0,var(--bg) 60%) fixed;color:var(--tx);font:15.5px/1.75 'Gowun Dodum',sans-serif;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);overflow-x:hidden}
+/* 촛불 먼지 */
+body::before{content:"";position:fixed;left:0;top:0;width:2px;height:2px;border-radius:50%;z-index:0;pointer-events:none;background:#ffd98a;
+ box-shadow:8vw 12vh #ffd98a,21vw 5vh #f2a0c0,34vw 22vh #ffd98a,47vw 9vh #fff3cf,59vw 28vh #ffd98a,72vw 7vh #a8ab8a,88vw 17vh #ffd98a,95vw 38vh #fff3cf,14vw 46vh #f2a0c0,29vw 61vh #ffd98a,52vw 52vh #ffd98a,68vw 66vh #a8ab8a,83vw 74vh #ffd98a,6vw 82vh #fff3cf,41vw 90vh #ffd98a,77vw 94vh #f2a0c0}
+@media (prefers-reduced-motion:no-preference){body::before{animation:fl 6s ease-in-out infinite alternate}@keyframes fl{from{opacity:.35;transform:translateY(0)}to{opacity:1;transform:translateY(-6px)}}.bar i,.bt i{transition:width .8s,left .8s}}
+#lobby,#app{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:18px}
+h1,h2,.narr,.line,.paper,.intro{font-family:'Gowun Batang',serif}
+h1{font-family:'Cinzel Decorative','Gowun Batang',serif;font-size:50px;margin:.2em 0 .05em;letter-spacing:.3em;text-indent:.3em;text-align:center;background:linear-gradient(90deg,var(--k),var(--lil) 50%,var(--m));-webkit-background-clip:text;background-clip:text;color:transparent}
+.crest{text-align:center;color:var(--lil);font-size:12.5px;letter-spacing:.2em}
+h2{font-size:23px;margin:.15em 0 .3em;color:var(--lil)}
+.narr{font-size:17px;line-height:2;margin:.5em 0 1.2em;color:#e6dac2}
+#lobby{display:flex;flex-direction:column;gap:14px;padding-top:12vh}#lobby .narr{text-align:center;color:var(--mu)}
+button,input{font:inherit;color:inherit}
+input{background:var(--sf);border:1px solid var(--edge);border-radius:6px;padding:13px 14px;width:100%}input::placeholder{color:#7a6c58}
+button{cursor:pointer;border:1px solid var(--edge);background:linear-gradient(#2a201b,var(--sf));border-radius:6px;padding:12px 14px;transition:border-color .25s,box-shadow .25s}
+button:hover:not(:disabled){border-color:var(--lil);box-shadow:0 0 12px #d4af6a33}button:disabled{opacity:.45;cursor:default}
+button:focus-visible,input:focus-visible{outline:2px solid var(--lil);outline-offset:2px}
+.roles{display:flex;gap:10px}.roles button{flex:1;font-weight:700;padding:14px}
+.k.on{border-color:var(--k);color:var(--k);box-shadow:0 0 14px #a8ab8a44}.m.on{border-color:var(--m);color:var(--m);box-shadow:0 0 14px #f2a0c044}
+.opt{display:block;width:100%;text-align:left;margin:10px 0;padding:15px 16px;line-height:1.6;border-left:3px solid var(--lil)}
+#err{color:#ff9d8a;text-align:center;margin:0}
+.top{display:flex;justify-content:space-between;color:var(--mu);font-size:13px}.top b{letter-spacing:.3em;color:var(--lil);font-weight:400}
+.pips{display:flex;gap:6px;margin:8px 0}.pips i{font-style:normal;flex:1;text-align:center;font-size:12px;padding:3px 0;border-bottom:2px solid var(--edge);color:#7a6c58}.pips i.past{color:var(--mu);border-color:var(--mu)}.pips i.on{color:var(--tx);border-color:var(--lil)}
+.meters{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:10px 0 4px}
+.mt{font-size:12px;color:var(--mu)}.bar{height:4px;background:var(--edge);margin-top:6px;border-radius:2px}.bar i{display:block;height:100%;background:var(--m);border-radius:2px}.mt.mem .bar i{background:var(--k)}
+.bal{display:flex;align-items:center;gap:10px;margin:12px 0 2px;font-size:12px;color:var(--mu)}.bal span:first-child{color:var(--k)}.bal span:last-child{color:var(--m)}
+.bt{flex:1;height:4px;background:var(--edge);position:relative;border-radius:2px}.bt i{position:absolute;top:-5px;width:13px;height:13px;margin-left:-6px;border-radius:50%;background:var(--lil);box-shadow:0 0 8px var(--lil)}
+nav{display:flex;margin:6px 0 18px;border-bottom:1px solid var(--edge)}
+nav button{flex:1;border:0;background:none;box-shadow:none;border-radius:0;padding:12px 2px 10px;color:var(--mu);position:relative}
+nav button.on{color:var(--lil)}nav button.on::after{content:"✦";position:absolute;left:50%;bottom:-9px;transform:translateX(-50%);font-size:11px;color:var(--lil);background:var(--bg);padding:0 6px}
+.chap,.mu,.wait{color:var(--mu);font-size:13px}
+.intro{background:var(--sf);border:1px solid var(--edge);border-left:3px solid var(--lil);border-radius:4px;padding:12px 14px;margin:0 0 16px;font-size:15px;line-height:1.8;color:#e0d3ba}
+.line{margin:8px 0;padding:2px 0 2px 14px;border-left:2px solid var(--edge);font-size:16.5px;line-height:1.9}
+.line.k{border-color:var(--k)}.line.m{border-color:var(--m)}.sync{color:var(--lil);font-size:13.5px}
+.paper{background:linear-gradient(#f3e8cf,var(--paper));color:var(--ink);border-radius:3px 12px 3px 12px;padding:14px 16px;margin:12px 0;line-height:1.9;box-shadow:0 2px 10px #0008}
+.paper small{display:block;color:#85764f;font-size:12px}.paper.warp{background:#d3c8ae}.paper.warp .w{background:#2b2118;color:#2b2118;border-radius:2px}
+.sky{width:100%;border:1px solid var(--edge);border-radius:10px;background:#1a1426}.sky .st{filter:drop-shadow(0 0 3px currentColor)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chips button{padding:5px 14px;border-radius:99px;font-size:13.5px}.chips .got{border-color:var(--lil);color:var(--lil)}
+.row{display:flex;gap:8px;margin:10px 0}.row input{flex:1}
+.grid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin:12px 0}.grid button{aspect-ratio:1;padding:0;font-size:22px;border-radius:6px;font-family:'Segoe UI Symbol','Noto Sans Symbols 2','Apple Symbols',sans-serif}
+.tools{display:flex;gap:8px;flex-wrap:wrap}.tools button.on{border-color:var(--lil);color:var(--lil)}
+.warn{color:#ff9d8a}.x{padding:2px 9px;font-size:12px;margin-left:6px;color:var(--mu);border-radius:99px}#off{color:#ff9d8a}
+.tri.saved{border-left-color:var(--k)}.tri.carried{border-left-color:var(--m)}.tri:disabled{opacity:.6}
+/* 직접 그린 아이콘 */
+.ic{width:1.15em;height:1.15em;vertical-align:-.2em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ic-m{color:var(--m)}.ic-k{color:var(--k)}
+.grid .ic{width:1.5em;height:1.5em;vertical-align:middle}
+.tools .ic{margin-right:.35em}
+.crest .ic{width:.9em;height:.9em;color:var(--lil)}
+
+/* 편지: 밀랍 도장 · 부엉이 */
+.letter{position:relative}.lt{display:flex;gap:8px;align-items:flex-start;margin-top:8px}.lt b{white-space:nowrap}
+.seal{flex:none;width:30px;height:30px;stroke:#0003;stroke-width:.8}.seal path:first-child{fill:#c4527f}.seal path:last-child{fill:#f7d4e1;stroke:none}
+.seal.k path:first-child{fill:#6f7557}.seal.k path:last-child{fill:#dfe3c8}
+.owl{position:fixed;z-index:9;top:28vh;left:-80px;width:64px;color:#e8dcc4;filter:drop-shadow(0 4px 6px #0008);pointer-events:none;animation:fly 2.2s ease-in-out forwards}
+.owl svg{width:100%;fill:currentColor;stroke:#2b2118;stroke-width:1.2}.owl .wl{animation:fl2 .25s infinite alternate;transform-origin:30px 24px}
+@keyframes fly{to{left:calc(100vw + 20px);top:8vh}}@keyframes fl2{to{transform:scaleY(.7)}}
+
+/* ── 개선: 별빛 · 유리 패널 · 부드러운 전환 ── */
+#panel>*{animation:rise .45s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+body::before{animation:twk 4s ease-in-out infinite alternate}
+@keyframes twk{from{opacity:.45}to{opacity:1}}
+.opt,button.opt{transition:transform .15s,box-shadow .2s,border-color .2s}
+.opt:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 6px 18px #0008,0 0 0 1px var(--lil)}
+.opt:active:not(:disabled){transform:scale(.98)}
+#lobby h1{letter-spacing:.3em;text-shadow:0 0 22px #d4af6a88}
+header{backdrop-filter:blur(8px);background:#15110fcc}
+.ic{filter:drop-shadow(0 0 4px currentColor)}
+.bar i{transition:width .6s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 8px currentColor}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* 별자리 잇기 */
+.trace svg{width:100%;max-height:230px;background:radial-gradient(ellipse at 50% 0,#2b2233,#17110f);border:1px solid var(--edge);border-radius:12px;margin:6px 0}
+.trace [data-star]{cursor:pointer}.trace [data-star] text{pointer-events:none}
+.trace .next .st{animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+
+/* 계단 주기 맞추기 */
+.trk{position:relative;height:34px;margin:8px 0;border:1px solid var(--edge);border-radius:8px;background:#17110f;overflow:hidden}
+.trk .zone{position:absolute;top:0;bottom:0;background:#d4af6a33;border-left:1px dashed var(--lil);border-right:1px dashed var(--lil)}
+.trk .stp{position:absolute;top:4px;width:18px;height:26px;margin-left:-9px;border-radius:3px;background:linear-gradient(#efe3c8,#b9a88a);box-shadow:0 0 8px #d4af6a88}
+
+.mt.heart .bar i{background:#e58fa8}.mt.heart{color:#e58fa8}
